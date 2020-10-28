@@ -3,7 +3,7 @@
     "pages/home/home",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/search/search",
+    "pages/store/store",
     "pages/mine/mine"
   ],
   "window":{
@@ -26,10 +26,10 @@
         "text": "主页"
       },
       {
-        "pagePath": "pages/search/search",
-        "iconPath": "images/search.png",
-        "selectedIconPath": "images/search-33FF66.png",
-        "text": "搜索"
+        "pagePath": "pages/store/store",
+        "iconPath": "images/store.png",
+        "selectedIconPath": "images/store-33FF66.png",
+        "text": "商城"
       },
       {
         "pagePath": "pages/mine/mine",
