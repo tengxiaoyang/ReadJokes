@@ -1,0 +1,18 @@
+<!-- pages/home/home.wxml -->
+<!-- <text>pages/home/home.wxml</text> -->
+<view class="main">
+  <view class="joke_list" wx:for="{{jokeList}}" wx:key="index">
+    <view class="left-view">
+      <image class="icon-view" src="{{item.icon}}"></image> 
+    </view>
+    <view class="right-view">
+      <view class="user-name-view">{{item.name}}</view>
+      <view class="content-view">{{item.content}}</view>  
+      <image class="photo-view" src="{{item.photo}}"></image> 
+      <view class="right-view-bottom">
+        <text>{{item.release_time}}</text>
+        <image class="favorite_button" src="/images/more.png"></image>  
+      </view>
+    </view> 
+  </view>
+</view>

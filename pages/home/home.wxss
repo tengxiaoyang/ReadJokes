@@ -1,0 +1,55 @@
+/* pages/home/home.wxss */
+.joke_list {
+  display: flex;
+  padding: 10px;
+  border-bottom: 0.02px solid #b3b3b3;
+}
+.left-view {
+  margin-right:10px;
+}
+.user-name-view {
+  color: #0066CC;
+}
+.content-view {
+  margin: 5px 0;
+}
+.icon-view {
+  width: 40px;
+  height: 40px;
+  /* border:1px solid #33FF66; */
+  border-radius: 5px;
+}
+.right-view {
+  /* border:1px solid #33FF66; */
+}
+.user-name-view {
+  /* border:1px solid #33FF66; */
+}
+.content-view {
+  /* border:1px solid #33FF66; */
+  width: 200px;
+}
+.photo-view {
+  width: 190px;
+  height: 150px;
+  /* border:1px solid #33FF66; */
+}
+.right-view-bottom {
+  /* border:1px solid #33FF66; */
+  width: 240px;
+  padding: 5px 0;
+}
+.right-view-bottom text {
+  display: inline-block;
+  /* border: 1px solid #33FF66; */
+  font-size: 14px;
+  font-weight: 500;
+  color: darkgrey ;
+}
+.favorite_button {
+  float: right;
+  margin: 5px 10px 5px 0;
+  width: 25px;
+  height: 15px;
+  /* border:1px solid #33FF66; */
+}
