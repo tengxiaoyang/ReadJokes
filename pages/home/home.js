@@ -11,7 +11,8 @@ Page({
         content: "哈哈哈哈哈哈哈哈哈哈哈哈哈或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或",
         icon: "https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1906469856,4113625838&fm=26&gp=0.jpg",
         photo: "https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1689053532,4230915864&fm=26&gp=0.jpg",
-        release_time: "发布于 20/10/28 18:09"
+        release_time: "发布于 20/10/28 18:09",
+        mode: 'aspectFit'
       },
       {
         name: "小李", 
@@ -24,7 +25,7 @@ Page({
         name: "小明", 
         content: "哈哈哈哈哈哈哈哈哈哈哈哈哈或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或",
         icon: "https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1906469856,4113625838&fm=26&gp=0.jpg",
-        photo: "https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1689053532,4230915864&fm=26&gp=0.jpg",
+        photo: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1603908876188&di=9d2a1ac90789b2ebf9c880d069a09bd9&imgtype=0&src=http%3A%2F%2Fpic27.nipic.com%2F20130319%2F607278_164821087363_2.jpg",
         release_time: "发布于 20/10/28 18:09"
       },
       {
@@ -42,7 +43,11 @@ Page({
         release_time: "发布于 20/10/28 18:09"
       }
     ],
-    // photo: "https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1689053532,4230915864&fm=26&gp=0.jpg"
+  },
+  show_small_stick: function(e) {
+    this.setData({
+      true_or_false: !this.data.true_or_false
+    })
   },
   /**
    * 生命周期函数--监听页面加载

@@ -1,7 +1,10 @@
 /* pages/home/home.wxss */
+.main {
+  padding: 0 0 0 0;
+}
 .joke_list {
   display: flex;
-  padding: 10px;
+  padding: 10px 10px 10px 10px;
   border-bottom: 0.02px solid #b3b3b3;
 }
 .left-view {
@@ -27,21 +30,22 @@
 }
 .content-view {
   /* border:1px solid #33FF66; */
-  width: 200px;
+  width: 90%;
 }
 .photo-view {
-  width: 190px;
-  height: 150px;
+  width: 80%;
   /* border:1px solid #33FF66; */
 }
 .right-view-bottom {
-  /* border:1px solid #33FF66; */
-  width: 240px;
+  display: block;
+  border:1px solid #33FF66;
+  position: relative;
+  width: 100%;
   padding: 5px 0;
 }
 .right-view-bottom text {
-  display: inline-block;
-  /* border: 1px solid #33FF66; */
+  /* display: inline-block; */
+  border: 1px solid #33FF66;
   font-size: 14px;
   font-weight: 500;
   color: darkgrey ;
@@ -49,7 +53,19 @@
 .favorite_button {
   float: right;
   margin: 5px 10px 5px 0;
-  width: 25px;
-  height: 15px;
-  /* border:1px solid #33FF66; */
+  width: 30px;
+  height: 20px;
+  border:1px solid #33FF66;
+  /* position: relative; */
+}
+.small_stick {
+  /* display: inline-block; */
+  position: absolute;
+  bottom: 0px;
+  right: 55px;
+  width: 140px;
+  height: 35px;
+  background: #E8E8E8;
+  border:1px solid #33FF66;
+  border-radius: 5px;
 }
