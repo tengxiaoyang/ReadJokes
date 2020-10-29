@@ -1,7 +1,7 @@
 <!-- pages/home/home.wxml -->
 <!-- <text>pages/home/home.wxml</text> -->
 <view class="main">
-  <view class="joke_list" wx:for="{{jokeList}}" wx:key="index">
+  <view class="joke_list" wx:for="{{jokes_data}}" wx:key="index">
     <view class="left-view">
       <image class="icon-view" src="{{item.icon}}"></image> 
     </view>
@@ -11,8 +11,12 @@
       <image class="photo-view" src="{{item.photo}}" mode="aspectFit"></image> 
       <view class="right-view-bottom">
         <text>{{item.release_time}}</text>
-        <image class="favorite_button" src="/images/two_dot.png" bindtap='show_small_stick'>  
-          <view class="small_stick" wx:if="{{true_or_false}}"></view>
+        <image class="favorite_button" src="/images/two_dot.png" bindtap="set_tips">  
+          <view class="small_stick" wx:if="{{show_tips}}">
+            <image class="like" src="/images/like.png"></image>
+            <image class="comment" src="/images/comment.png"></image>
+            <image class="star" src="/images/star.png"></image>
+          </view>
         </image>
       </view>
     </view> 
