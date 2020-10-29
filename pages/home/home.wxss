@@ -19,32 +19,26 @@
 .icon-view {
   width: 40px;
   height: 40px;
-  /* border:1px solid #33FF66; */
+  /* border:1px solid 00CC66; */
   border-radius: 5px;
 }
-.right-view {
-  /* border:1px solid #33FF66; */
-}
-.user-name-view {
-  /* border:1px solid #33FF66; */
-}
 .content-view {
-  /* border:1px solid #33FF66; */
+  /* border:1px solid 00CC66; */
   width: 90%;
 }
 .photo-view {
   width: 80%;
-  /* border:1px solid #33FF66; */
+  /* border:1px solid 00CC66; */
 }
 .right-view-bottom {
   display: block;
-  /* border:1px solid #33FF66; */
+  /* border:1px solid 00CC66; */
   position: relative;
   width: 100%;
   padding: 5px 0;
 }
 .right-view-bottom text {
-  /* border: 1px solid #33FF66; */
+  /* border: 1px solid 00CC66; */
   font-size: 14px;
   font-weight: 500;
   color: darkgrey ;
@@ -54,7 +48,7 @@
   margin: 5px 10px 5px 0;
   width: 30px;
   height: 20px;
-  /* border:1px solid #33FF66; */
+  /* border:1px solid 00CC66; */
 }
 .small_stick {
   align-items: center;

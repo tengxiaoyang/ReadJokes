@@ -1,2 +1,26 @@
 <!--pages/store/store.wxml-->
-<text>pages/store/store.wxml</text>
+<view class="main">
+  <view class="banner">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="#A0A0A0" indicator-active-color="#fff" circular="true" previous-margin="0px" next-margin="0px">
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+            <image class="slide-image" src="{{item}}" mode="aspectFill"/>
+        </swiper-item>
+      </block>      
+    </swiper>
+    <text class="integral">您的积分：0</text>
+  </view>
+  <view class="product-view"> 
+    <text class="all_products">全部礼品</text>
+    <view class="product_grid">
+      <view class="product_list" wx:for="{{product_data}}" wx:key="index"> 
+        <image class="photo-view" src="{{item.photo}}" mode="aspectFit"></image>
+        <view class="content-view">{{item.content}}</view> 
+        <view class="product-view-bottom">
+          <text class="remaining_amount">{{item.remaining_amount}}</text>
+          <text class="product_score">{{item.product_score}}</text>
+        </view>
+      </view>
+    </view> 
+  </view>
+</view>
