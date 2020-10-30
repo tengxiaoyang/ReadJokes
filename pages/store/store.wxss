@@ -5,22 +5,23 @@
   background: #F8F8F8;
 }
 .banner swiper {
-  height: 700rpx;
+  height: 450rpx;
   display: block;
   background: #F8F8F8;
 }
 .banner swiper image {
-  height: 700rpx;
+  height: 450rpx;
   width: 100%;
   display: block;
   background: #F8F8F8;
 }
 .integral {
-  position: absolute;
-  bottom: 30rpx;
-  left: 50rpx;
-  color: #00CC66;
+  display: block;
+  position: relative;
+  padding: 10px 0 10px 20px;
+  color: #009999;
   font-size: 30rpx;
+  background: #CCFFFF;
 }
 .product-view {
   background: #F8F8F8;
@@ -28,7 +29,7 @@
 .all_products {
   display: block;
   margin: 0 0 10px 15px;
-  padding: 17px 0 0 0;
+  padding: 17px 0 0 4px;
   font-weight: 700;
 }
 .product_grid {
@@ -42,5 +43,26 @@
   margin: 8px;
 }
 .photo-view {
-  width: 80%;
+  width: 100%;
+  height: 75%;
+}
+.content-view {
+  text-align: center;
+}
+.product-view-bottom {
+  display: flex;
+  padding: 5px 0 0 0;
+}
+.remaining_amount {
+  flex: 1;
+  display: inline-block;
+  color: #888888;
+  font-size: 14px;
+  padding: 0 0 0 5px;
+}
+.product_score {
+  width: 60%;
+  display: inline-block;
+  color: #FF0000;
+  font-size: 14px;
 }

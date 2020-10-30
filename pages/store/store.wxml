@@ -8,7 +8,7 @@
         </swiper-item>
       </block>      
     </swiper>
-    <text class="integral">您的积分：0</text>
+    <text class="integral">您的积分：{{integral}}</text>
   </view>
   <view class="product-view"> 
     <text class="all_products">全部礼品</text>
@@ -17,8 +17,8 @@
         <image class="photo-view" src="{{item.photo}}" mode="aspectFit"></image>
         <view class="content-view">{{item.content}}</view> 
         <view class="product-view-bottom">
-          <text class="remaining_amount">{{item.remaining_amount}}</text>
-          <text class="product_score">{{item.product_score}}</text>
+          <text class="remaining_amount">余 {{item.remaining_amount}}</text>
+          <text class="product_score">{{item.product_score}}积分</text>
         </view>
       </view>
     </view> 
