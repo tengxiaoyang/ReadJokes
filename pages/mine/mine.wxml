@@ -3,44 +3,33 @@
   <view class="top">
     <view class="top-main">
       <view class="top-icon">
-        <image class="top-icon-img" src="{{icon}}" mode="aspectFill"></image>
+        <image class="top-icon-img" src="{{user_icon}}" mode="aspectFill"></image>
       </view>
       <view class="top-name">{{username}}</view>
       <view class="top-rank">{{user_rank}}</view>
     </view>
   </view>
   <view class="middle">
-    <view class="tell_a_joke">
-      <view class="tell_a_joke-icon_view">
-        <image class="tell_a_joke-icon" src="/images/tell_a_joke.png"></image>
-      </view>
-      <view class="tell_a_joke-content">讲个段子</view>
-    </view>
-    <view class="my_jokes">
-      <view class="my_jokes-icon_view">
-        <image class="my_jokes-icon" src="/images/my_jokes.png"></image>
-      </view>
-      <view class="my_jokes-content">我的段子</view>
-    </view>
-    <view class="my_collection">
-      <view class="my_collection-icon_view">
-        <image class="my_collection-icon" src="/images/my_collection.png"></image>
-      </view>  
-      <view class="my_collection-content">我的收藏</view>
-    </view>
+    <mp-cells>
+      <mp-cell link value="讲个段子">
+        <image slot="icon" src="/images/tell_a_joke.png"></image>
+      </mp-cell>
+      <mp-cell link value="我的段子">
+        <image slot="icon" src="/images/my_jokes.png"></image>
+      </mp-cell>
+      <mp-cell link value="我的收藏">
+        <image slot="icon" src="/images/my_collection.png"></image>
+      </mp-cell>
+    </mp-cells>
   </view>
-  <view class="bottom">    
-    <view class="contact">
-      <view class="contact-icon_view">
-        <image class="contact-icon" src="/images/contact.png"></image>
-      </view>
-      <view class="contact-content">联系</view>
-    </view>
-    <view class="about">
-      <view class="about-icon_view">
-        <image class="about-icon" src="/images/about.png"></image>
-      </view>
-      <view class="about-content">关于</view>
-    </view>
+  <view class="bottom">   
+    <mp-cells>
+      <mp-cell link value="联系">
+        <image slot="icon" src="/images/contact.png"></image>
+      </mp-cell>
+      <mp-cell link value="关于">
+        <image slot="icon" src="/images/about.png"></image>
+      </mp-cell>
+    </mp-cells>
   </view>
 </view>

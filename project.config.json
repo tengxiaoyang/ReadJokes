@@ -37,7 +37,7 @@
     "minifyWXSS": true
   },
   "compileType": "miniprogram",
-  "libVersion": "2.0.4",
+  "libVersion": "2.10.3",
   "appid": "wx1fa8a5689b3ffd69",
   "projectname": "ReadJokes",
   "debugOptions": {

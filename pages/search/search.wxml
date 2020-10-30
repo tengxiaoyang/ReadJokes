@@ -1,9 +1,4 @@
 <!--pages/search/search.wxml-->
 <view class="top">
-  <view class="search_view">
-    <view class="search_frame">
-      <input></input>
-    </view>
-    <text bindtap="search">搜索</text>
-  </view>
+  <mp-searchbar bindselectresult="selectResult" search="{{search}}"></mp-searchbar>
 </view>
