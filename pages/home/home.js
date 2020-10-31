@@ -11,7 +11,8 @@ Page({
         content: "哈哈哈哈哈哈哈哈哈哈哈哈哈或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或",
         icon: "https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1906469856,4113625838&fm=26&gp=0.jpg",
         photo: "https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1689053532,4230915864&fm=26&gp=0.jpg",
-        release_time: "发布于 20/10/28 18:09"
+        release_time: "发布于 20/10/28 18:09",
+        show_tips: false,
       },
       {
         name: "小李", 
@@ -78,11 +79,16 @@ Page({
         release_time: "发布于 20/10/28 18:09"
       }
     ],
-    show_tips: false
   },
   set_tips: function(e) {
+    console.log(e);
+    let now_index = e.currentTarget.dataset.index;
+    console.log(now_index);
+    console.log(this.data.jokes_data[now_index].show_tips);
+    let a = this.data.jokes_data;
+    a[now_index].show_tips = !a[now_index].show_tips;
     this.setData({
-      show_tips: !this.data.show_tips
+      jokes_data: a
     })
   },
   /**
