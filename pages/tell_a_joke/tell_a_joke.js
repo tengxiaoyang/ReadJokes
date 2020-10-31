@@ -1,4 +1,4 @@
-// pages/my_jokes.js
+// pages/tell_a_joke/tell_a_joke.js
 Page({
 
   /**

@@ -11,22 +11,24 @@
   </view>
   <view class="middle">
     <mp-cells>
-      <mp-cell link value="讲个段子">
+      <mp-cell link value="讲个段子" bindtap="jump_to_tell_a_joke">
         <image slot="icon" src="/images/tell_a_joke.png"></image>
       </mp-cell>
       <mp-cell link value="我的段子" bindtap="jump_to_my_jokes">
         <image slot="icon" src="/images/my_jokes.png"></image>
       </mp-cell>
-      <mp-cell link value="我的收藏">
+      <mp-cell link value="我的收藏" bindtap="jump_to_my_collection">
         <image slot="icon" src="/images/my_collection.png"></image>
       </mp-cell>
     </mp-cells>
   </view>
   <view class="bottom">   
     <mp-cells>
-      <mp-cell link value="联系">
-        <image slot="icon" src="/images/contact.png"></image>
-      </mp-cell>
+      <button class="handleContact" open-type="contact" bindcontact="handleContact">
+        <mp-cell link value="联系">
+          <image slot="icon" src="/images/contact.png"></image>
+        </mp-cell>
+      </button>
       <mp-cell link value="关于" bindtap="jump_to_about">
         <image slot="icon" src="/images/about.png"></image>
       </mp-cell>

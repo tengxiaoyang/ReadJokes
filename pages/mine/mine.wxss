@@ -173,3 +173,26 @@
   display: inline-block;
   line-height: 100rpx;
 }
+.handleContact {
+  display: flex;
+  align-items: center;
+  position: relative;
+  min-width: 100%;
+  margin: 0;
+  padding: 0;
+  height: 115rpx;
+  background: #fff;
+  border: 0;
+  text-align: left;
+  font-weight: 400;
+}
+.handleContact mp-cell {
+  flex: 1;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100vh;
+  background: #fff;
+  text-align: left;
+  font-weight: 400;
+}

@@ -1,0 +1,6 @@
+<!--pages/tell_a_joke/tell_a_joke.wxml-->
+<view class="main">
+  <view class="center">
+    <text class="content">由于技术原因，添加段子功能暂时关闭</text>
+  </view>
+</view>

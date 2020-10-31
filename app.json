@@ -6,8 +6,9 @@
     "pages/search/search",
     "pages/store/store",
     "pages/mine/mine",
-    "pages/my_jokes",
-    "pages/my_jokes/my_jokes"
+    "pages/my_jokes/my_jokes",
+    "pages/tell_a_joke/tell_a_joke",
+    "pages/my_collection/my_collection"
   ],
   "window": {
     "backgroundTextStyle": "light",

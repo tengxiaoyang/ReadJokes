@@ -1,0 +1,23 @@
+/* pages/tell_a_joke/tell_a_joke.wxss */
+.main {
+  background: #F8F8F8;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  width: 70%;
+  height: 80%;
+  position: relative;
+}
+.content {
+  display: block;
+  height: 40rpx;
+  font-size: 28rpx;
+  color: #686868;
+  position: relative;
+  top: 300rpx;
+}

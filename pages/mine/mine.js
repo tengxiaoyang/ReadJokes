@@ -19,6 +19,20 @@ Page({
       url: "/pages/my_jokes/my_jokes"
     })
   },
+  handleContact (e) {
+      console.log(e.detail.path)
+      console.log(e.detail.query)
+  },
+  jump_to_tell_a_joke: function(e) {
+    wx.navigateTo({
+      url: "/pages/tell_a_joke/tell_a_joke"
+    })
+  },
+  jump_to_my_collection: function(e) {
+    wx.navigateTo({
+      url: "/pages/my_collection/my_collection"
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载
