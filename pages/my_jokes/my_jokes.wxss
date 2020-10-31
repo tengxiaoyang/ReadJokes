@@ -1,1 +1,123 @@
 /* pages/my_jokes/my_jokes.wxss */
+.main {
+  background: #F8F8F8;
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+  position: relative;
+}
+.top {
+  height: 280rpx;
+  background: #3399FF;
+  position: relative;
+  margin: 0;
+  padding: 40rpx 0 0 40rpx;
+}
+.top .user {
+  width: 280rpx;
+  height: 120rpx;
+  position: relative;
+  /* margin: 40rpx 0 0 40rpx; */
+  display: flex;
+  align-items: center;
+}
+.top .user .user_left {
+  display: inline-block;
+  width: 150rpx;
+  height: 120rpx;
+}
+.user-icon-img {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 120rpx;
+}
+.top .user .user_right {
+  position: relative;
+  display: inline-block;
+  width: 120rpx;
+  height: 100rpx;
+}
+.username {
+  position: relative;
+  display: block;
+  width: 120rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  color: #fff;
+}
+.user_rank {
+  position: relative;
+  width: 65rpx;
+  height: 30rpx;
+  text-align: center;
+  line-height: 30rpx;
+  color: #fff;
+  font-size: 24rpx;
+  border: 1rpx solid #fff;
+  border-radius: 20rpx;
+}
+.middle {
+  position: relative;
+  bottom: 90rpx;
+  height: 250rpx;
+  display: flex;
+  justify-content: center;
+}
+.window {
+  width: 80%;
+  height: 250rpx;
+  background: #fff;
+  border-radius: 20rpx;
+  display: flex;
+  justify-content: center;
+}
+.window-outside {
+  width: 90%;
+}
+.window-inside {
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+}
+.window-inside-center {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  align-items: center;
+}
+.window-left {
+  display: inline-block;
+  width: 90rpx;
+  height: 100%;
+  position: relative;
+  color: #606060;
+  font-size: 22rpx;
+  margin: 0 10rpx 0 0;
+}
+.window-middle {
+  display: inline-block;
+}
+.window-right {
+  display: inline-block;
+  width: 90rpx;
+  height: 100%;
+  position: relative;
+  color: #606060;
+  font-size: 22rpx;
+  margin: 0 0 0 10rpx;
+}
+.window-middle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  height: 100%;
+  position: relative;
+}
+.progress_bar {
+  width: 97%;
+  height: 60%;
+  background: #F0F0F0;
+  border-radius: 10rpx;
+}

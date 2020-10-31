@@ -1,2 +1,50 @@
 <!--pages/my_jokes/my_jokes.wxml-->
-<text>pages/my_jokes/my_jokes.wxml</text>
+<view class="main">
+  <view class="top">
+    <view class="user">
+      <view class="user_left">        
+        <view class="user-icon">
+          <image class="user-icon-img" src="{{user_icon}}" mode="aspectFill"></image>
+        </view>
+      </view>
+      <view class="user_right">
+        <text class="username">{{username}}</text>
+        <view class="user_rank">{{user_rank}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="middle">
+    <view class="window">
+      <view class="window-outside">
+        <view class="window-inside">
+          <view class="window-inside-center">
+            <text class="window-left">被点赞了</text>
+            <view class="window-middle">
+              <view class="progress_bar"></view>
+            </view>
+            <text class="window-right">{{be_liked}}</text>
+          </view>
+        </view>
+        <view class="window-inside">
+          <view class="window-inside-center">
+            <text class="window-left">被收藏了</text>
+            <view class="window-middle">
+              <view class="progress_bar"></view>
+            </view>
+            <text class="window-right">{{have_been_collected}}</text>
+          </view>
+        </view>
+        <view class="window-inside">
+          <view class="window-inside-center">
+            <text class="window-left">讲的段子</text>
+            <view class="window-middle">
+              <view class="progress_bar"></view>
+            </view>
+            <text class="window-right">{{jokes_have_told}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="bottom"></view>
+</view>

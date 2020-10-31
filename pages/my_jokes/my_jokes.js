@@ -5,7 +5,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    user_icon: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1603974089565&di=aa4390823043f595d57d0505f5e2b7ca&imgtype=0&src=http%3A%2F%2Fimg.article.pchome.net%2F00%2F34%2F09%2F06%2Fpic_lib%2Fs960x639%2Fjmfj061s960x639.jpg",
+    username: "李明",
+    user_rank: "LV1",
+    be_liked: "0/100",
+    have_been_collected: "0/20",
+    jokes_have_told: "0/5"
   },
 
   /**
