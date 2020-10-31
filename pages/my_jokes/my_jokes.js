@@ -1,23 +1,11 @@
-// pages/mine/mine.js
+// pages/my_jokes/my_jokes.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    user_icon: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1603974089565&di=aa4390823043f595d57d0505f5e2b7ca&imgtype=0&src=http%3A%2F%2Fimg.article.pchome.net%2F00%2F34%2F09%2F06%2Fpic_lib%2Fs960x639%2Fjmfj061s960x639.jpg",
-    username: "李明",
-    user_rank: "LV1 初出茅庐"
-  },
-  jump_to_about: function(e) {
-    wx.navigateTo({
-      url: "/pages/about/about"
-    })
-  },
-  jump_to_my_jokes: function(e) {
-    wx.navigateTo({
-      url: "/pages/my_jokes/my_jokes"
-    })
+
   },
 
   /**

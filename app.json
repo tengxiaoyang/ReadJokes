@@ -1,17 +1,19 @@
 {
-  "pages":[
+  "pages": [
     "pages/home/home",
     "pages/index/index",
     "pages/logs/logs",
     "pages/search/search",
     "pages/store/store",
-    "pages/mine/mine"
+    "pages/mine/mine",
+    "pages/my_jokes",
+    "pages/my_jokes/my_jokes"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F8F8F8",
     "navigationBarTitleText": "看段子",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",

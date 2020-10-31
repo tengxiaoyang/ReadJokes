@@ -14,7 +14,7 @@
       <mp-cell link value="讲个段子">
         <image slot="icon" src="/images/tell_a_joke.png"></image>
       </mp-cell>
-      <mp-cell link value="我的段子">
+      <mp-cell link value="我的段子" bindtap="jump_to_my_jokes">
         <image slot="icon" src="/images/my_jokes.png"></image>
       </mp-cell>
       <mp-cell link value="我的收藏">
@@ -27,7 +27,7 @@
       <mp-cell link value="联系">
         <image slot="icon" src="/images/contact.png"></image>
       </mp-cell>
-      <mp-cell link value="关于">
+      <mp-cell link value="关于" bindtap="jump_to_about">
         <image slot="icon" src="/images/about.png"></image>
       </mp-cell>
     </mp-cells>

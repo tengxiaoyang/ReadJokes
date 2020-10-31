@@ -1,0 +1,14 @@
+<view class="page">
+  <view class="main">
+    <mp-msg icon="/images/ReadJokes.jpg" title="看段子">
+      <view slot="desc">Version 1.0.0</view>
+      <view slot="extend">
+        <view>搞笑段子第一品牌</view>
+        <view>陪伴你快乐每一天</view>
+      </view>
+      <view slot="footer">
+        <view class="weui-footer__text">Copyright © 2020-2024 tengxiaoyang</view>
+      </view>
+    </mp-msg>
+  </view>
+</view>
