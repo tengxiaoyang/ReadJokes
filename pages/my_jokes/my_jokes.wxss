@@ -58,7 +58,7 @@
 }
 .middle {
   position: relative;
-  bottom: 90rpx;
+  bottom: 120rpx;
   height: 250rpx;
   display: flex;
   justify-content: center;
