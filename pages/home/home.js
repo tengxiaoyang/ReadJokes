@@ -1,4 +1,3 @@
-// pages/home/home.js
 Page({
 
   /**
@@ -13,6 +12,7 @@ Page({
         photo: "https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1689053532,4230915864&fm=26&gp=0.jpg",
         release_time: "发布于 20/10/28 18:09",
         show_tips: false,
+        show_collect: false
       },
       {
         name: "小李", 
@@ -81,14 +81,43 @@ Page({
     ],
   },
   set_tips: function(e) {
-    console.log(e);
     let now_index = e.currentTarget.dataset.index;
-    console.log(now_index);
-    console.log(this.data.jokes_data[now_index].show_tips);
     let a = this.data.jokes_data;
     a[now_index].show_tips = !a[now_index].show_tips;
     this.setData({
       jokes_data: a
+    })
+  },
+  set_collect: function(e) {
+    let now_index = e.currentTarget.dataset.index;
+    // let a = this.data.jokes_data;
+    // a[now_index].show_collect = !a[now_index].show_collect;
+    // this.setData({
+    //   jokes_data: a
+    // });
+    
+    let storage_string = wx.getStorageSync("collect_key");
+    var now_joke_string = JSON.stringify(this.data.jokes_data[now_index]);
+    if (storage_string.indexOf(now_joke_string) === -1) {
+      if (storage_string) {
+        // console.log(storage_string)
+        var storage_arr = JSON.parse(storage_string);
+      } else {
+        // console.log(storage_string)
+        var storage_arr = [];
+      }
+      storage_arr.push(this.data.jokes_data[now_index]);
+      let new_storage_string = JSON.stringify(storage_arr);
+      console.log(new_storage_string);
+      wx.setStorageSync("collect_key", new_storage_string);
+    } else {
+      
+    }
+
+    // console.log(wx.getStorageSync("collect_key"))
+    
+    wx.showToast({
+      title: "已收藏",
     })
   },
   /**

@@ -20,8 +20,8 @@ Page({
     })
   },
   handleContact (e) {
-      console.log(e.detail.path)
-      console.log(e.detail.query)
+      // console.log(e.detail.path)
+      // console.log(e.detail.query)
   },
   jump_to_tell_a_joke: function(e) {
     wx.navigateTo({
