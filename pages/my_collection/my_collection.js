@@ -14,42 +14,13 @@ Page({
       jokes_data: a
     })
   },
-  set_collect: function(e) {
-    let now_index = e.currentTarget.dataset.index;
-    // let a = this.data.jokes_data;
-    // a[now_index].show_collect = !a[now_index].show_collect;
-    // this.setData({
-    //   jokes_data: a
-    // });
-    
-    let storage_string = wx.getStorageSync("collect_key");
-    var now_joke_string = JSON.stringify(this.data.jokes_data[now_index]);
-    if (storage_string.indexOf(now_joke_string) === -1) {
-      if (storage_string) {
-        console.log(storage_string)
-        var storage_arr = JSON.parse(storage_string);
-      } else {
-        console.log(storage_string)
-        var storage_arr = [];
-      }
-      storage_arr.push(this.data.jokes_data[now_index]);
-      let new_storage_string = JSON.stringify(storage_arr);
-      wx.setStorageSync("collect_key", new_storage_string);
-    } else {
-      
-    }
-    
-    wx.showToast({
-      title: "已收藏",
-    })
-  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     console.log(wx.getStorageSync("collect_key"));
-    var display_string = wx.getStorageSync("collect_key")
-    var display_arr = JSON.parse(display_string)
+    let display_string = wx.getStorageSync("collect_key")
+    let display_arr = JSON.parse(display_string)
     this.setData({
       jokes_data: display_arr,
 
@@ -66,45 +37,42 @@ Page({
   slideButtonTap(e) {
     // console.log('slide button tap', e.detail)
       
-    var now_index = e.currentTarget.dataset.index;
-    console.log(now_index)
+    let now_index = e.currentTarget.dataset.index;
+    console.log(now_index);
+    let ID_to_delete = this.data.jokes_data[now_index].ID;
+    console.log(ID_to_delete);
     
     let storage_string = wx.getStorageSync("collect_key");
-    var now_joke_string = JSON.stringify(this.data.jokes_data[now_index]);
-    if (storage_string.indexOf(now_joke_string) !== -1) {
-      if (storage_string) {
-        // console.log(storage_string)
-        var storage_arr = JSON.parse(storage_string);
-      } else {
-        // console.log(storage_string)
+    let storage_arr = JSON.parse(storage_string);
+    console.log(storage_arr);
+
+    // console.log(storage_arr[2].ID);
+    let index_to_delete;
+    for (let i = 0; i < storage_arr.length; ++ i) {
+      if (storage_arr[i].ID === ID_to_delete) {
+        console.log(storage_arr[i]);
+        index_to_delete = i;
       }
-      storage_arr.splice(now_index, 1);
-      // storage_arr.push(this.data.jokes_data[now_index]);
-      let new_storage_string = JSON.stringify(storage_arr);
-      // console.log(new_storage_string);
-      wx.setStorageSync("collect_key", new_storage_string);
     }
+    console.log(index_to_delete);
+
+    storage_arr.splice(index_to_delete, 1);
+
+    let new_storage_string = JSON.stringify(storage_arr);
+    wx.setStorageSync("collect_key", new_storage_string);
 
     // console.log(wx.getStorageSync("collect_key"))
-
     console.log(wx.getStorageSync("collect_key"));
-    var display_string = wx.getStorageSync("collect_key")
-    var display_arr = JSON.parse(display_string)
+    let display_string = wx.getStorageSync("collect_key")
+    let display_arr = JSON.parse(display_string)
     this.setData({
       jokes_data: display_arr,
-
-      icon: "/images/collected.png",
-      slideButtons: [{
-        type: 'warn',
-        text: '取消收藏',
-        extClass: 'test',
-          src: '/page/weui/cell/icon_del.svg', // icon的路径
-      }],
     })
     
     wx.showToast({
       title: "已取消收藏",
     })
+    
   },
 
   /**

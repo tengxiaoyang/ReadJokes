@@ -106,14 +106,15 @@ Page({
     // });
     
     let storage_string = wx.getStorageSync("collect_key");
-    var now_joke_string = JSON.stringify(this.data.jokes_data[now_index]);
+    let now_joke_string = JSON.stringify(this.data.jokes_data[now_index]);
     if (storage_string.indexOf(now_joke_string) === -1) {
+      let storage_arr
       if (storage_string) {
         // console.log(storage_string)
-        var storage_arr = JSON.parse(storage_string);
+        storage_arr = JSON.parse(storage_string);
       } else {
         // console.log(storage_string)
-        var storage_arr = [];
+        storage_arr = [];
       }
       storage_arr.push(this.data.jokes_data[now_index]);
       let new_storage_string = JSON.stringify(storage_arr);
