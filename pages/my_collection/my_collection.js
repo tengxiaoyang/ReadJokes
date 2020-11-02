@@ -51,8 +51,20 @@ Page({
     var display_string = wx.getStorageSync("collect_key")
     var display_arr = JSON.parse(display_string)
     this.setData({
-      jokes_data: display_arr
+      jokes_data: display_arr,
+
+      icon: "/images/collected.png",
+      slideButtons: [{
+        type: 'warn',
+        text: '警示',
+        extClass: 'test',
+          src: '/page/weui/cell/icon_del.svg', // icon的路径
+      }],
     })
+  },
+
+  slideButtonTap(e) {
+      console.log('slide button tap', e.detail)
   },
 
   /**

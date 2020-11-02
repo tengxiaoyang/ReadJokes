@@ -1,4 +1,24 @@
 <view class="main">
+  <view class="weui-cells">
+    <mp-slideview class="collected_slideview"  wx:for="{{jokes_data}}" wx:key="index" buttons="{{slideButtons}}" bindbuttontap="slideButtonTap">
+      <mp-cell value="左滑可以删除" footer="说明文字">
+        <view class="joke_list" slot="title">
+          <view class="left-view">
+            <image class="icon-view" src="{{item.icon}}"></image> 
+          </view>
+          <view class="right-view">
+            <view class="user-name-view">{{item.name}}</view>
+            <view class="content-view">{{item.content}}</view>  
+            <image class="photo-view" src="{{item.photo}}" mode="widthFix"></image> 
+            <view class="right-view-bottom">
+              <text>{{item.release_time}}</text>
+            </view>
+          </view> 
+        </view>
+      </mp-cell>
+    </mp-slideview>
+  </view>
+
   <view class="joke_list" wx:for="{{jokes_data}}" wx:key="index">
     <view class="left-view">
       <image class="icon-view" src="{{item.icon}}"></image> 
@@ -9,13 +29,13 @@
       <image class="photo-view" src="{{item.photo}}" mode="widthFix"></image> 
       <view class="right-view-bottom">
         <text>{{item.release_time}}</text>
-        <image class="favorite_button" src="/images/two_dot.png" bindtap="set_tips" data-index="{{index}}"></image>  
-        <view class="small_stick" wx:if="{{item.show_tips}}">
+        <!-- <image class="favorite_button" src="/images/two_dot.png" bindtap="set_tips" data-index="{{index}}"></image>   -->
+        <!-- <view class="small_stick" wx:if="{{item.show_tips}}">
           <image class="like" src="/images/like.png"></image>
           <image class="comment" src="/images/comment.png"></image>
           <image class="star" src="/images/star.png" bindtap="set_collect" data-index="{{index}}" wx:if="{{!item.show_collect}}"></image>
           <image class="star" src="/images/collected.png" bindtap="set_collect" data-index="{{index}}" wx:if="{{item.show_collect}}"></image>
-        </view>
+        </view> -->
       </view>
     </view> 
   </view>

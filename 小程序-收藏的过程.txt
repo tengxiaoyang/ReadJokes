@@ -1,0 +1,16 @@
+添加收藏：
+点击收藏按钮，点击事件执行set_collect，
+定义变量now_index等于当前点击的index，
+定义变量storage_string等于缓存中key为"collect_key"的数据，
+定义变量now_joke_string等于当前点击的段子jokes_data[now_index]的json字符串，
+条件语句判断storage_string中是否存在now_joke_string，不存在时添加收藏，存在时不添加收藏，
+条件语句判断storage_string是否存在，若存在定义变量storage_arr等于json字符串storage_string转的数组，若不存在定义变量storage_arr等于空数组，
+给storage_arr添加当前点击收藏的段子jokes_data[now_index]，
+定义变量new_storage_string等于storage_arr的json字符串，
+修改缓存中key为"collect_key"的数据的值为new_storage_string
+
+显示收藏：
+点击我的收藏，执行onLoad，
+定义变量display_string等于缓存中key为"collect_key"的数据，
+定义变量display_arr等于json字符串display_string转的数组，
+修改jokes_data的值为display_arr
