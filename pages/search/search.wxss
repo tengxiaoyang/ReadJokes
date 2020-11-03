@@ -2,10 +2,10 @@
 page {
   background-color: #fff;
 }
-.top {
+/* .top {
   width: 100%;
   background-color: #E8E8E8;
-}
+} */
 .search_view {
   width: 90%;
   margin-left: 5%;

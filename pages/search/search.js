@@ -6,7 +6,9 @@ Page({
    */
   data: {
     inputShowed: false,
-    inputVal: ""
+    inputVal: "",
+    
+    jokes_data: [],
   },
 
   /**
@@ -20,7 +22,13 @@ Page({
   search: function (value) {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        resolve([{text: '搜索结果', value: 1}, {text: '搜索结果2', value: 2}])
+        resolve(
+          [{text: '搜索结果1', value: 1}, {text: '搜索结果2', value: 2}],
+          
+          get_search_results(
+            // console.log(/pages/home/home.js/)
+          ),
+          )
       }, 200)
     })
   },

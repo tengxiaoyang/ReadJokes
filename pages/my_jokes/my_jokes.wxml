@@ -49,7 +49,7 @@
   <view class="bottom"></view>
 
   <view class="weui-cells">
-    <mp-slideview class="liked_slideview"  wx:for="{{jokes_data}}" wx:key="index" buttons="{{slideButtons}}" bindbuttontap="slideButtonTap" data-id="{{item.ID}}">
+    <mp-slideview class="liked_slideview"  wx:for="{{jokes_data}}" wx:key="index" buttons="{{slideButtons}}" bindbuttontap="slideButtonTap" data-id="{{item.id}}">
       <mp-cell value="" footer="">
         <view class="joke_list" slot="title">
           <view class="left-view">

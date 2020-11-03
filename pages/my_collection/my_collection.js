@@ -41,8 +41,8 @@ Page({
   slideButtonTap(e) {
     // console.log('slide button tap', e.detail)
     console.log(e);
-    let ID_to_delete = e.currentTarget.dataset.id;
-    console.log(ID_to_delete);
+    let id_to_delete = e.currentTarget.dataset.id;
+    console.log(id_to_delete);
     
     wx.getStorage({
       key: "collect_key",
@@ -52,10 +52,10 @@ Page({
         let storage_arr = JSON.parse(storage_string);
         console.log(storage_arr);
     
-        // console.log(storage_arr[2].ID);
+        // console.log(storage_arr[2].id);
         let index_to_delete;
         for (let i = 0; i < storage_arr.length; ++ i) {
-          if (storage_arr[i].ID === ID_to_delete) {
+          if (storage_arr[i].id === id_to_delete) {
             console.log(storage_arr[i]);
             index_to_delete = i;
           }
