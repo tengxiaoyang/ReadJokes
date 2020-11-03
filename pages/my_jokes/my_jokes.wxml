@@ -18,11 +18,11 @@
       <view class="window-outside">
         <view class="window-inside">
           <view class="window-inside-center">
-            <text class="window-left">被点赞了</text>
+            <text class="window-left">我点赞了</text>
             <view class="window-middle">
               <view class="progress_bar"></view>
             </view>
-            <text class="window-right">{{be_liked}}</text>
+            <text class="window-right">{{I_liked}}</text>
           </view>
         </view>
         <view class="window-inside">
@@ -47,4 +47,25 @@
     </view>
   </view>
   <view class="bottom"></view>
+
+  <view class="weui-cells">
+    <mp-slideview class="liked_slideview"  wx:for="{{jokes_data}}" wx:key="index" buttons="{{slideButtons}}" bindbuttontap="slideButtonTap" data-id="{{item.ID}}">
+      <mp-cell value="" footer="">
+        <view class="joke_list" slot="title">
+          <view class="left-view">
+            <image class="icon-view" src="{{item.icon}}"></image> 
+          </view>
+          <view class="right-view">
+            <view class="user-name-view">{{item.name}}</view>
+            <view class="content-view">{{item.content}}</view>  
+            <image class="photo-view" src="{{item.photo}}" mode="widthFix"></image> 
+            <view class="right-view-bottom">
+              <text>{{item.release_time}}</text>
+              <text>向左滑动可以取消点赞</text>
+            </view>
+          </view> 
+        </view>
+      </mp-cell>
+    </mp-slideview>
+  </view>
 </view>

@@ -142,6 +142,50 @@ Page({
       title: "已收藏",
     })
   },
+  set_like: function(e) {
+    console.log(e);
+    let now_index = e.currentTarget.dataset.index;
+
+    wx.getStorage({
+      key: "like_key",
+      success: (res) => {
+        console.log(res.data)
+        let storage_string = res.data;
+        let now_joke_string = JSON.stringify(this.data.jokes_data[now_index]);
+        console.log(now_joke_string)
+        if (storage_string.indexOf(now_joke_string) === -1) {
+          let storage_arr = JSON.parse(storage_string);
+          storage_arr.push(this.data.jokes_data[now_index]);
+          let new_storage_string = JSON.stringify(storage_arr);
+          console.log(new_storage_string);
+          
+          wx.setStorage({
+            key: "like_key",
+            data: new_storage_string
+          })
+        }
+      },
+      fail: (res) => {
+        console.log(res.data)
+        console.log(res)
+        let storage_arr = [];
+        
+        console.log(this)
+        storage_arr.push(this.data.jokes_data[now_index]);
+        let new_storage_string = JSON.stringify(storage_arr);
+        console.log(new_storage_string);
+        
+        wx.setStorage({
+          key: "like_key",
+          data: new_storage_string
+        })
+      },
+    })
+    
+    wx.showToast({
+      title: "已点赞",
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

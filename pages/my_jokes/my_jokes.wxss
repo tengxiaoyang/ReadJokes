@@ -121,3 +121,84 @@
   background: #F0F0F0;
   border-radius: 10rpx;
 }
+
+.weui-slideview__right {
+  line-height: 100%;
+}
+.weui-slideview__btn {
+  height: 96%;
+  display: flex;
+  align-items: center;  
+}
+.weui-slideview__btn text {
+  line-height: 100%;
+}
+.joke_list {
+  display: flex;
+  padding: 10px 10px 10px 10px;
+  border-bottom: 0.02px solid #b3b3b3;
+}
+.left-view {
+  margin-right:10px;
+}
+.user-name-view {
+  color: #0066CC;
+}
+.content-view {
+  margin: 5px 0;
+}
+.icon-view {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+}
+.content-view {
+  width: 90%;
+}
+.photo-view {
+  width: 80%;
+}
+.right-view-bottom {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding: 0;
+}
+.right-view-bottom text {
+  display: block;
+  padding: 5rpx 0 0 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: darkgrey;
+}
+.favorite_button {
+  float: right;
+  margin: 5px 10px 5px 0;
+  width: 30px;
+  height: 20px;
+}
+.small_stick {
+  align-items: center;
+  position: absolute;
+  bottom: 0px;
+  right: 55px;
+  width: 140px;
+  height: 35px;
+  background: #F8F8F8;
+  border-radius: 5px;
+}
+.small_stick .like {
+  margin: 5px 10px 0 15px;
+  width: 25px;
+  height: 25px;
+}
+.small_stick .comment {
+  margin: 5px 10px 0 10px;
+  width: 25px;
+  height: 25px;
+}
+.small_stick .star {
+  margin: 5px 10px 0 10px;
+  width: 25px;
+  height: 25px;
+}
