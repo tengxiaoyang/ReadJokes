@@ -89,40 +89,54 @@ Page({
     ],
   },
   set_tips: function(e) {
+    console.log(e)
     let now_index = e.currentTarget.dataset.index;
     let a = this.data.jokes_data;
     a[now_index].show_tips = !a[now_index].show_tips;
+    console.log(this.data)
     this.setData({
       jokes_data: a
     })
   },
   set_collect: function(e) {
+    console.log(e);
     let now_index = e.currentTarget.dataset.index;
-    console.log(now_index);
-    // let a = this.data.jokes_data;
-    // a[now_index].show_collect = !a[now_index].show_collect;
-    // this.setData({
-    //   jokes_data: a
-    // });
-    
-    let storage_string = wx.getStorageSync("collect_key");
-    let now_joke_string = JSON.stringify(this.data.jokes_data[now_index]);
-    if (storage_string.indexOf(now_joke_string) === -1) {
-      let storage_arr
-      if (storage_string) {
-        // console.log(storage_string)
-        storage_arr = JSON.parse(storage_string);
-      } else {
-        // console.log(storage_string)
-        storage_arr = [];
-      }
-      storage_arr.push(this.data.jokes_data[now_index]);
-      let new_storage_string = JSON.stringify(storage_arr);
-      console.log(new_storage_string);
-      wx.setStorageSync("collect_key", new_storage_string);
-    }
 
-    // console.log(wx.getStorageSync("collect_key"))
+    wx.getStorage({
+      key: "collect_key",
+      success: (res) => {
+        console.log(res.data)
+        let storage_string = res.data;
+        let now_joke_string = JSON.stringify(this.data.jokes_data[now_index]);
+        console.log(now_joke_string)
+        if (storage_string.indexOf(now_joke_string) === -1) {
+          let storage_arr = JSON.parse(storage_string);
+          storage_arr.push(this.data.jokes_data[now_index]);
+          let new_storage_string = JSON.stringify(storage_arr);
+          console.log(new_storage_string);
+          
+          wx.setStorage({
+            key: "collect_key",
+            data: new_storage_string
+          })
+        }
+      },
+      fail: (res) => {
+        console.log(res.data)
+        console.log(res)
+        let storage_arr = [];
+        
+        console.log(this)
+        storage_arr.push(this.data.jokes_data[now_index]);
+        let new_storage_string = JSON.stringify(storage_arr);
+        console.log(new_storage_string);
+        
+        wx.setStorage({
+          key: "collect_key",
+          data: new_storage_string
+        })
+      },
+    })
     
     wx.showToast({
       title: "已收藏",

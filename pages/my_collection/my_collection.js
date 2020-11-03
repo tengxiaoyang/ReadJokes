@@ -17,56 +17,64 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    console.log(wx.getStorageSync("collect_key"));
-    let display_string = wx.getStorageSync("collect_key")
-    let display_arr = JSON.parse(display_string)
-    this.setData({
-      jokes_data: display_arr,
+  onLoad: function (options) {    
+    wx.getStorage({
+    key: "collect_key",
+    success: (res) => {
+      let display_string = res.data;
+      let display_arr = JSON.parse(display_string)
+      this.setData({
+        jokes_data: display_arr,
 
-      icon: "/images/collected.png",
-      slideButtons: [{
-        type: 'warn',
-        text: '取消收藏',
-        extClass: 'test',
-          src: '/page/weui/cell/icon_del.svg', // icon的路径
-      }],
-    })
+        icon: "/images/collected.png",
+        slideButtons: [{
+          type: 'warn',
+          text: '取消收藏',
+          extClass: 'test',
+            src: '/page/weui/cell/icon_del.svg', // icon的路径
+        }],
+      })
+    }
+  })
   },
 
   slideButtonTap(e) {
     // console.log('slide button tap', e.detail)
-      
-    let now_index = e.currentTarget.dataset.index;
-    console.log(now_index);
-    let ID_to_delete = this.data.jokes_data[now_index].ID;
+    console.log(e);
+    let ID_to_delete = e.currentTarget.dataset.id;
     console.log(ID_to_delete);
     
-    let storage_string = wx.getStorageSync("collect_key");
-    let storage_arr = JSON.parse(storage_string);
-    console.log(storage_arr);
+    wx.getStorage({
+      key: "collect_key",
+      success: (res) => {
+        console.log(res.data)
+        let storage_string = res.data;
+        let storage_arr = JSON.parse(storage_string);
+        console.log(storage_arr);
+    
+        // console.log(storage_arr[2].ID);
+        let index_to_delete;
+        for (let i = 0; i < storage_arr.length; ++ i) {
+          if (storage_arr[i].ID === ID_to_delete) {
+            console.log(storage_arr[i]);
+            index_to_delete = i;
+          }
+        }
+        console.log(index_to_delete);
+    
+        storage_arr.splice(index_to_delete, 1);
 
-    // console.log(storage_arr[2].ID);
-    let index_to_delete;
-    for (let i = 0; i < storage_arr.length; ++ i) {
-      if (storage_arr[i].ID === ID_to_delete) {
-        console.log(storage_arr[i]);
-        index_to_delete = i;
-      }
-    }
-    console.log(index_to_delete);
-
-    storage_arr.splice(index_to_delete, 1);
-
-    let new_storage_string = JSON.stringify(storage_arr);
-    wx.setStorageSync("collect_key", new_storage_string);
-
-    // console.log(wx.getStorageSync("collect_key"))
-    console.log(wx.getStorageSync("collect_key"));
-    let display_string = wx.getStorageSync("collect_key")
-    let display_arr = JSON.parse(display_string)
-    this.setData({
-      jokes_data: display_arr,
+        
+        let new_storage_string = JSON.stringify(storage_arr);
+        wx.setStorage({
+          key: "collect_key",
+          data: new_storage_string
+        })
+        
+        this.setData({
+          jokes_data: storage_arr
+        })
+      },
     })
     
     wx.showToast({

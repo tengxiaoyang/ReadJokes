@@ -1,6 +1,6 @@
 <view class="main">
   <view class="weui-cells">
-    <mp-slideview class="collected_slideview"  wx:for="{{jokes_data}}" wx:key="index" buttons="{{slideButtons}}" bindbuttontap="slideButtonTap" data-index="{{index}}">
+    <mp-slideview class="collected_slideview"  wx:for="{{jokes_data}}" wx:key="index" buttons="{{slideButtons}}" bindbuttontap="slideButtonTap" data-id="{{item.ID}}">
       <mp-cell value="" footer="">
         <view class="joke_list" slot="title">
           <view class="left-view">
