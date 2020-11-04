@@ -58,7 +58,7 @@
           <view class="right-view">
             <view class="user-name-view">{{item.name}}</view>
             <view class="content-view">{{item.content}}</view>  
-            <image class="photo-view" src="{{item.photo}}" mode="widthFix"></image> 
+            <image class="photo-view" src="{{item.photo}}" mode="widthFix" bindtap="previewImage" data-src="{{item.photo}}" data-index="{{index}}"></image> 
             <view class="right-view-bottom">
               <text>{{item.release_time}}</text>
               <text>向左滑动可以取消点赞</text>

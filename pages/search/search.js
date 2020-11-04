@@ -1,3 +1,4 @@
+const jokes_data = require("../../public_files/jokes");
 // pages/search/search.js
 const jokes = require("/../../public_files/jokes.js");
 console.log(jokes);
@@ -164,6 +165,17 @@ Page({
     
     wx.showToast({
       title: "已点赞",
+    })
+  },
+
+  previewImage: function(e) {
+    console.log(e);
+    let now_index = e.currentTarget.dataset.index;
+    let current = e.currentTarget.dataset.src
+    console.log(current)
+    wx.previewImage({
+      current,
+      urls: [this.data.jokes_data[now_index].photo]
     })
   },
 

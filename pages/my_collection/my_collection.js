@@ -83,6 +83,17 @@ Page({
     
   },
 
+  previewImage: function(e) {
+    console.log(e);
+    let now_index = e.currentTarget.dataset.index;
+    let current = e.currentTarget.dataset.src
+    console.log(current)
+    wx.previewImage({
+      current,
+      urls: [this.data.jokes_data[now_index].photo]
+    })
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

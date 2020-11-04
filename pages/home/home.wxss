@@ -7,7 +7,7 @@
   border-bottom: 0.02px solid #b3b3b3;
 }
 .left-view {
-  margin-right:10px;
+  margin: 6px 14px 0 10px;
 }
 .user-name-view {
   color: #0066CC;
@@ -25,6 +25,10 @@
 }
 .photo-view {
   width: 80%;
+}
+.right-view {
+  width: 100%;
+  height: 100%;
 }
 .right-view-bottom {
   display: block;

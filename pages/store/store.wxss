@@ -2,18 +2,18 @@
 .banner {
   width: 100%;
   position: relative;
-  background: #F8F8F8;
+  background: #fff;
 }
 .banner swiper {
   height: 450rpx;
   display: block;
-  background: #F8F8F8;
+  background: #fff;
 }
 .banner swiper image {
   height: 450rpx;
   width: 100%;
   display: block;
-  background: #F8F8F8;
+  background: #fff;
 }
 .integral {
   display: block;
@@ -61,7 +61,7 @@
   padding: 0 0 0 5px;
 }
 .product_score {
-  width: 60%;
+  width: 63%;
   display: inline-block;
   color: #FF0000;
   font-size: 14px;

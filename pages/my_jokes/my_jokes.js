@@ -89,6 +89,18 @@ Page({
     })
     
   },
+
+  previewImage: function(e) {
+    console.log(e);
+    let now_index = e.currentTarget.dataset.index;
+    let current = e.currentTarget.dataset.src
+    console.log(current)
+    wx.previewImage({
+      current,
+      urls: [this.data.jokes_data[now_index].photo]
+    })
+  },
+  
   set_number_of_my_likes() {
     wx.getStorage({
       key: "like_key",
