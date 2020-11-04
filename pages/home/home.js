@@ -1,3 +1,6 @@
+const jokes = require("/../../public_files/jokes.js");
+console.log(jokes);
+
 Page({
 
   /**
@@ -186,6 +189,8 @@ Page({
       title: "已点赞",
     })
   },
+
+
   /**
    * 生命周期函数--监听页面加载
    */
