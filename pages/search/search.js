@@ -55,14 +55,14 @@ Page({
   selectResult: function (e) {
     console.log('select result', e.detail)
   },
-  clear_searchbar: function (e) {
-    console.log('clear_searchbar', e.detail)    
+  clear_searchbar: function () {
+    console.log('clear_searchbar')    
     this.setData({
       jokes_data: []
     })
   },
-  cancel_searchbar: function (e) {
-    console.log('cancel_searchbar', e.detail)    
+  cancel_searchbar: function () {
+    console.log('cancel_searchbar')    
     this.setData({
       jokes_data: []
     })

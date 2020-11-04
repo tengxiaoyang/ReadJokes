@@ -1,6 +1,6 @@
 <!--pages/search/search.wxml-->
 <view class="top">
-  <mp-searchbar bindselectresult="selectResult" search="{{search}}" bindclear="clear_searchbar" bindcancel="cancel_searchbar"></mp-searchbar>
+  <mp-searchbar bindselectresult="selectResult" search="{{search}}" bindclear="clear_searchbar" bindblur="cancel_searchbar"></mp-searchbar>
 </view>
 
 <view class="main">
