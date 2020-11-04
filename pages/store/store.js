@@ -10,7 +10,7 @@ Page({
     imgUrls: [
         "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604503662603&di=0c71a96d87c1baa1c5ec9f05c3519604&imgtype=0&src=http%3A%2F%2Fupload.ikanchai.com%2F2019%2F1025%2F1571972315870.jpg",
         "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604504032053&di=556bf38681351e456cb7ed5ccb5e162c&imgtype=0&src=http%3A%2F%2Fimg0.pconline.com.cn%2Fpconline%2F2002%2F06%2F13198186_33_thumb.png",
-        "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2778805069,2039960456&fm=26&gp=0.jpg"
+        "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604506520395&di=eee54763c860dad2dbcde3a14f978fd6&imgtype=0&src=http%3A%2F%2Ffiles.nowre.com%2Farticles%2F2019%2F10%2FMWP22.jpeg"
     ],
     indicatorDots: true,
     autoplay: true,
