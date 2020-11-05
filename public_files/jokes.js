@@ -6,8 +6,7 @@ let jokes_data = [
     icon: "https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1906469856,4113625838&fm=26&gp=0.jpg",
     photo: "https://www.biedoul.com/Uploads/Images/81/5716ee937f6ee.jpg",
     release_time: "发布于 20/10/28 18:09",
-    id: 1,
-    show_liked: false
+    id: 1
   },
   {
     name: "冷笑话精选", 

@@ -172,7 +172,7 @@ Page({
         console.log(now_joke_string)
 
         for (let i = 0; i < storage_arr.length; ++ i) {
-          if (storage_arr[i].id !== a[now_index].id) {
+          if (storage_string.indexOf(JSON.stringify(a[now_index])) === -1) {
             let storage_arr = JSON.parse(storage_string);
             storage_arr.push(this.data.jokes_data[now_index]);
             let new_storage_string = JSON.stringify(storage_arr);
@@ -251,7 +251,7 @@ Page({
         console.log(now_joke_string)
 
         for (let i = 0; i < storage_arr.length; ++ i) {
-          if (storage_arr[i].id !== a[now_index].id) {
+          if (storage_string.indexOf(JSON.stringify(a[now_index])) === -1) {
             let storage_arr = JSON.parse(storage_string);
             storage_arr.push(this.data.jokes_data[now_index]);
             let new_storage_string = JSON.stringify(storage_arr);
