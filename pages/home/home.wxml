@@ -14,8 +14,8 @@
           <image class="like" src="/images/like.png" bindtap="set_like" data-index="{{index}}" data-id="{{item.id}}" wx:if="{{!item.show_liked}}"></image>
           <image class="like" src="/images/liked.png" bindtap="set_like" data-index="{{index}}" data-id="{{item.id}}" wx:if="{{item.show_liked}}"></image>
           <image class="comment" src="/images/comment.png"></image>
-          <image class="star" src="/images/star.png" bindtap="set_collect" data-index="{{index}}" data-id="{{item.id}}" wx:if="{{!item.show_collect}}"></image>
-          <image class="star" src="/images/collected.png" bindtap="set_collect" data-index="{{index}}" data-id="{{item.id}}" wx:if="{{item.show_collect}}"></image>
+          <image class="star" src="/images/star.png" bindtap="set_collect" data-index="{{index}}" data-id="{{item.id}}" wx:if="{{!item.show_collected}}"></image>
+          <image class="star" src="/images/collected.png" bindtap="set_collect" data-index="{{index}}" data-id="{{item.id}}" wx:if="{{item.show_collected}}"></image>
         </view>
       </view>
     </view> 

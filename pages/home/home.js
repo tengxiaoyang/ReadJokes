@@ -140,6 +140,35 @@ Page({
         console.log(this.data.jokes_data)
       }
     })
+
+    wx.getStorage({
+      key: "collect_key",
+      success: (res) => {
+        console.log(res.data)
+        let storage_string = res.data;
+        let storage_arr = JSON.parse(storage_string);
+        console.log(storage_arr);
+    
+        console.log(a[now_index].show_collected)
+        
+        for (let i = 0; i < storage_arr.length; ++ i) {
+          if (storage_arr[i].id === a[now_index].id) {
+            a[now_index].show_collected = !a[now_index].show_collected;
+            // a[now_index].show_collected = true;
+          } 
+          // else {
+          //   a[now_index].show_collected = false;
+          // }
+        }
+        console.log(a[now_index].show_collected)
+        console.log(a)
+        console.log(this.data)
+        this.setData({
+          jokes_data: a
+        })
+        console.log(this.data.jokes_data)
+      }
+    })
   },
   set_collect: function(e) {
     console.log(e);
@@ -148,31 +177,58 @@ Page({
     wx.getStorage({
       key: "collect_key",
       success: (res) => {
+        
+        let a = this.data.jokes_data;
+        a[now_index].show_collected = true;
+
+        console.log(this.data)
+        this.setData({
+          jokes_data: a
+        })
+
+        
         console.log(res.data)
         let storage_string = res.data;
+        
+        let storage_arr = JSON.parse(storage_string);
+        console.log(storage_arr);
+
         let now_joke_string = JSON.stringify(this.data.jokes_data[now_index]);
         console.log(now_joke_string)
-        if (storage_string.indexOf(now_joke_string) === -1) {
-          let storage_arr = JSON.parse(storage_string);
-          storage_arr.push(this.data.jokes_data[now_index]);
-          let new_storage_string = JSON.stringify(storage_arr);
-          console.log(new_storage_string);
-          
-          wx.setStorage({
-            key: "collect_key",
-            data: new_storage_string
-          })
 
-          wx.showToast({
-            title: "收藏成功",
-          })
-        } else {
-          wx.showToast({
-            title: "已收藏",
-          })
+        for (let i = 0; i < storage_arr.length; ++ i) {
+          if (storage_arr[i].id !== a[now_index].id) {
+            let storage_arr = JSON.parse(storage_string);
+            storage_arr.push(this.data.jokes_data[now_index]);
+            let new_storage_string = JSON.stringify(storage_arr);
+            console.log(new_storage_string);
+            
+            wx.setStorage({
+              key: "collect_key",
+              data: new_storage_string
+            })
+  
+            wx.showToast({
+              title: "收藏成功",
+            })
+          } else {
+            wx.showToast({
+              title: "已收藏",
+            })
+          } 
         }
       },
       fail: (res) => {
+
+        let a = this.data.jokes_data;
+        a[now_index].show_collected = true;
+
+        console.log(this.data)
+        this.setData({
+          jokes_data: a
+        })
+
+
         console.log(res.data)
         console.log(res)
         let storage_arr = [];
@@ -192,6 +248,7 @@ Page({
         })
       },
     })
+
   },
   set_like: function(e) {
     console.log(e);
@@ -218,24 +275,27 @@ Page({
 
         let now_joke_string = JSON.stringify(this.data.jokes_data[now_index]);
         console.log(now_joke_string)
-        if (storage_string.indexOf(now_joke_string) === -1) {
-          let storage_arr = JSON.parse(storage_string);
-          storage_arr.push(this.data.jokes_data[now_index]);
-          let new_storage_string = JSON.stringify(storage_arr);
-          console.log(new_storage_string);
-          
-          wx.setStorage({
-            key: "like_key",
-            data: new_storage_string
-          })
 
-          wx.showToast({
-            title: "点赞成功",
-          })
-        } else {
-          wx.showToast({
-            title: "已点赞",
-          })
+        for (let i = 0; i < storage_arr.length; ++ i) {
+          if (storage_arr[i].id !== a[now_index].id) {
+            let storage_arr = JSON.parse(storage_string);
+            storage_arr.push(this.data.jokes_data[now_index]);
+            let new_storage_string = JSON.stringify(storage_arr);
+            console.log(new_storage_string);
+            
+            wx.setStorage({
+              key: "like_key",
+              data: new_storage_string
+            })
+  
+            wx.showToast({
+              title: "点赞成功",
+            })
+          } else {
+            wx.showToast({
+              title: "已点赞",
+            })
+          } 
         }
       },
       fail: (res) => {
