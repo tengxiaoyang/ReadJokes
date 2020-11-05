@@ -70,13 +70,49 @@ Page({
   },
   
   set_tips: function(e) {
+    // console.log(e)
+    // let now_index = e.currentTarget.dataset.index;
+    // let a = this.data.jokes_data;
+    // a[now_index].show_tips = !a[now_index].show_tips;
+    // console.log(this.data)
+    // this.setData({
+    //   jokes_data: a
+    // })
+
     console.log(e)
     let now_index = e.currentTarget.dataset.index;
     let a = this.data.jokes_data;
     a[now_index].show_tips = !a[now_index].show_tips;
-    console.log(this.data)
     this.setData({
       jokes_data: a
+    })
+    wx.getStorage({
+      key: "like_key",
+      success: (res) => {
+        console.log(res.data)
+        let storage_string = res.data;
+        let storage_arr = JSON.parse(storage_string);
+        console.log(storage_arr);
+    
+        console.log(a[now_index].show_liked)
+        
+        for (let i = 0; i < storage_arr.length; ++ i) {
+          if (storage_arr[i].id === a[now_index].id) {
+            a[now_index].show_liked = !a[now_index].show_liked;
+            // a[now_index].show_liked = true;
+          } 
+          // else {
+          //   a[now_index].show_liked = false;
+          // }
+        }
+        console.log(a[now_index].show_liked)
+        console.log(a)
+        console.log(this.data)
+        this.setData({
+          jokes_data: a
+        })
+        console.log(this.data.jokes_data)
+      }
     })
   },
   set_collect: function(e) {
@@ -130,8 +166,22 @@ Page({
     wx.getStorage({
       key: "like_key",
       success: (res) => {
+        
+        let a = this.data.jokes_data;
+        a[now_index].show_liked = true;
+
+        console.log(this.data)
+        this.setData({
+          jokes_data: a
+        })
+
+        
         console.log(res.data)
         let storage_string = res.data;
+        
+        let storage_arr = JSON.parse(storage_string);
+        console.log(storage_arr);
+
         let now_joke_string = JSON.stringify(this.data.jokes_data[now_index]);
         console.log(now_joke_string)
         if (storage_string.indexOf(now_joke_string) === -1) {
@@ -144,9 +194,27 @@ Page({
             key: "like_key",
             data: new_storage_string
           })
+
+          wx.showToast({
+            title: "点赞成功",
+          })
+        } else {
+          wx.showToast({
+            title: "已点赞",
+          })
         }
       },
       fail: (res) => {
+
+        let a = this.data.jokes_data;
+        a[now_index].show_liked = true;
+
+        console.log(this.data)
+        this.setData({
+          jokes_data: a
+        })
+
+
         console.log(res.data)
         console.log(res)
         let storage_arr = [];
@@ -160,11 +228,11 @@ Page({
           key: "like_key",
           data: new_storage_string
         })
+
+        wx.showToast({
+          title: "点赞成功",
+        })
       },
-    })
-    
-    wx.showToast({
-      title: "已点赞",
     })
   },
 
