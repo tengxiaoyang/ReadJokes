@@ -17,7 +17,7 @@
 .top-main {
   width: 40%;
   height: 300rpx;
-  margin: 15px 0 12px 0;
+  margin: 50px 0 12px 0;
 }
 .top-icon {
   display: flex;
@@ -26,10 +26,23 @@
   height: 120rpx;
   margin: 15px 0 0 0;
 }
+.top-icon button {
+  text-align: center;
+  line-height: 226rpx;
+  font-size: 42rpx;
+  position: relative;
+  top: -15rpx;
+  width: 228rpx!important;
+  height: 228rpx;
+  border-radius: 114rpx;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
 .top-icon-img {
   width: 120rpx;
   height: 120rpx;
-  border-radius: 5px;
+  border-radius: 60rpx;
 }
 .top-name {
   text-align: center;

@@ -1,4 +1,4 @@
-// pages/mine/mine.js
+const app = getApp();
 Page({
 
   /**
@@ -7,8 +7,21 @@ Page({
   data: {
     user_icon: "https://hbimg.huabanimg.com/bc4a96cf3ea27046c3f587cc1882943f666d4e7536db-JZTJN6_fw658/format/webp",
     username: "新用户",
-    user_rank: "LV1 初出茅庐"
+    user_rank: "LV1 初出茅庐",
+    have_user_info: false
   },
+  get_user_info: function(e) {
+    if(e.detail.userInfo){
+      app.globalData.userInfo = e.detail.userInfo
+      this.setData({
+        // user_info: e.detail.userInfo,
+        user_icon: e.detail.userInfo.avatarUrl,
+        username: e.detail.userInfo.nickName,
+        have_user_info: true
+      })
+    }
+  },
+  
   jump_to_about: function(e) {
     wx.navigateTo({
       url: "/pages/about_us/about_us"
@@ -38,7 +51,32 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    if (app.globalData.userInfo) {
+      this.setData({
+        user_icon: app.globalData.userInfo.avatarUrl,
+        username: app.globalData.userInfo.nickName,
+        have_user_info: true
+      })
+    } else if (this.data.canIUse){
+      app.userInfoReadyCallback = res => {
+        this.setData({
+          user_icon: app.globalData.userInfo.avatarUrl,
+          username: app.globalData.userInfo.nickName,
+          have_user_info: true
+        })
+      }
+    } else {
+      wx.getUserInfo({
+        success: res => {
+          app.globalData.userInfo = res.userInfo
+          this.setData({
+            user_icon: app.globalData.userInfo.avatarUrl,
+            username: app.globalData.userInfo.nickName,
+            have_user_info: true
+          })
+        }
+      })
+    }
   },
 
   /**
