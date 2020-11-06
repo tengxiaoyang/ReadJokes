@@ -1,6 +1,6 @@
 const jokes = require("/../../public_files/jokes.js");
 console.log(jokes);
-let display_quantity = 5;
+let display_quantity = 10;
 
 Page({
 
@@ -355,10 +355,10 @@ Page({
     
     setTimeout(function () {
       wx.hideLoading()
-    }, 300)
+    }, 500)
 
     // display_quantity = display_quantity + 5;
-    display_quantity += 5;
+    display_quantity += 10;
     console.log(display_quantity)
     this.setData({
       jokes_data: jokes.slice(0, display_quantity)

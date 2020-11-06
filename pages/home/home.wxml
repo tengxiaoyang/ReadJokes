@@ -1,4 +1,4 @@
-<scroll-view scroll-y="true"  bindscrolltolower="scroll_to_lower" style="height: 1300rpx">
+<scroll-view class="main_scroll-view" bindscrolltolower="scroll_to_lower" scroll-y="true" lower-threshold="10">
   <view class="main">
     <view class="joke_list" wx:for="{{jokes_data}}" wx:key="index">
       <view class="left-view">

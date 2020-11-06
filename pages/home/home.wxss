@@ -1,3 +1,6 @@
+.main_scroll-view {
+  height: 1300rpx
+}
 .main {
   padding: 0 0 0 0;
   width: 100%;
