@@ -1,5 +1,6 @@
 const jokes = require("/../../public_files/jokes.js");
 console.log(jokes);
+let display_quantity = 5;
 
 Page({
 
@@ -7,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    jokes_data: jokes,
+    jokes_data: [],
     // jokes_data: [
     //   {
     //     name: "小明", 
@@ -346,12 +347,31 @@ Page({
   show_liked: function(e) {
     return true
   },
+  
+  scroll_to_lower: function(e) {
+    wx.showLoading({
+      title: "加载中",
+    })
+    
+    setTimeout(function () {
+      wx.hideLoading()
+    }, 300)
+
+    // display_quantity = display_quantity + 5;
+    display_quantity += 5;
+    console.log(display_quantity)
+    this.setData({
+      jokes_data: jokes.slice(0, display_quantity)
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    this.setData({
+      jokes_data: jokes.slice(0, display_quantity)
+    })
   },
 
   /**
@@ -365,21 +385,27 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    // this.setData({
+    //   jokes_data: jokes
+    // })
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    // this.setData({
+    //   jokes_data: []
+    // })
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    // this.setData({
+    //   jokes_data: []
+    // })
   },
 
   /**

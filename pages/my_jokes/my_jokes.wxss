@@ -17,7 +17,7 @@
   width: 280rpx;
   height: 120rpx;
   position: relative;
-  /* margin: 40rpx 0 0 40rpx; */
+  left: 45rpx;
   display: flex;
   align-items: center;
 }
@@ -40,7 +40,7 @@
 .username {
   position: relative;
   display: block;
-  width: 120rpx;
+  width: 460rpx;
   height: 50rpx;
   line-height: 50rpx;
   color: #fff;
@@ -55,6 +55,19 @@
   font-size: 24rpx;
   border: 1rpx solid #fff;
   border-radius: 20rpx;
+}
+.top button {
+  text-align: center;
+  line-height: 74px;
+  font-size: 32rpx;
+  position: relative;
+  top: -15rpx;
+  width: 148rpx!important;
+  height: 148rpx;
+  border-radius: 74rpx;
+  border: 0;
+  padding: 0;
+  margin: 0;
 }
 .middle {
   position: relative;

@@ -104,7 +104,16 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    // let pages = getCurrentPages(); 
+    // let beforePage = pages[pages.length - 2];
+    // wx.switchTab({
+    //     url: '/' + beforePage.route,
+    //     success: function() {
+    //         if (beforePage.route === "pages/home/home" || beforePage.route === "pages/search/search"){
+    //             beforePage.onLoad()
+    //         }
+    //     }
+    // })
   },
 
   /**

@@ -1,23 +1,25 @@
-<view class="main">
-  <view class="joke_list" wx:for="{{jokes_data}}" wx:key="index">
-    <view class="left-view">
-      <image class="icon-view" src="{{item.icon}}"></image> 
-    </view>
-    <view class="right-view">
-      <view class="user-name-view">{{item.name}}</view>
-      <view class="content-view">{{item.content}}</view>  
-      <image class="photo-view" src="{{item.photo}}" mode="widthFix" bindtap="previewImage" data-src="{{item.photo}}" data-index="{{index}}"></image> 
-      <view class="right-view-bottom">
-        <text>{{item.release_time}}</text>
-        <image class="favorite_button" src="/images/two_dot.png" bindtap="set_tips" data-index="{{index}}"></image>  
-        <view class="small_stick" wx:if="{{item.show_tips}}">
-          <image class="like" src="/images/like.png" bindtap="set_like" data-index="{{index}}" data-id="{{item.id}}" wx:if="{{!item.show_liked}}"></image>
-          <image class="like" src="/images/liked.png" bindtap="set_like" data-index="{{index}}" data-id="{{item.id}}" wx:if="{{item.show_liked}}"></image>
-          <image class="comment" src="/images/comment.png"></image>
-          <image class="star" src="/images/star.png" bindtap="set_collect" data-index="{{index}}" data-id="{{item.id}}" wx:if="{{!item.show_collected}}"></image>
-          <image class="star" src="/images/collected.png" bindtap="set_collect" data-index="{{index}}" data-id="{{item.id}}" wx:if="{{item.show_collected}}"></image>
-        </view>
+<scroll-view scroll-y="true"  bindscrolltolower="scroll_to_lower" style="height: 1300rpx">
+  <view class="main">
+    <view class="joke_list" wx:for="{{jokes_data}}" wx:key="index">
+      <view class="left-view">
+        <image class="icon-view" src="{{item.icon}}"></image> 
       </view>
-    </view> 
+      <view class="right-view">
+        <view class="user-name-view">{{item.name}}</view>
+        <view class="content-view">{{item.content}}</view>  
+        <image class="photo-view" src="{{item.photo}}" mode="widthFix" bindtap="previewImage" data-src="{{item.photo}}" data-index="{{index}}"></image> 
+        <view class="right-view-bottom">
+          <text>{{item.release_time}}</text>
+          <image class="favorite_button" src="/images/two_dot.png" bindtap="set_tips" data-index="{{index}}"></image>  
+          <view class="small_stick" wx:if="{{item.show_tips}}">
+            <image class="like" src="/images/like.png" bindtap="set_like" data-index="{{index}}" data-id="{{item.id}}" wx:if="{{!item.show_liked}}"></image>
+            <image class="like" src="/images/liked.png" bindtap="set_like" data-index="{{index}}" data-id="{{item.id}}" wx:if="{{item.show_liked}}"></image>
+            <image class="comment" src="/images/comment.png"></image>
+            <image class="star" src="/images/star.png" bindtap="set_collect" data-index="{{index}}" data-id="{{item.id}}" wx:if="{{!item.show_collected}}"></image>
+            <image class="star" src="/images/collected.png" bindtap="set_collect" data-index="{{index}}" data-id="{{item.id}}" wx:if="{{item.show_collected}}"></image>
+          </view>
+        </view>
+      </view> 
+    </view>
   </view>
-</view>
+</scroll-view>

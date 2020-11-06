@@ -1,7 +1,7 @@
 <!--pages/my_jokes/my_jokes.wxml-->
 <view class="main">
   <view class="top">
-    <view class="user">
+    <view class="user" wx:if="{{have_user_info}}">
       <view class="user_left">        
         <view class="user-icon">
           <image class="user-icon-img" src="{{user_icon}}" mode="aspectFill"></image>
@@ -12,6 +12,9 @@
         <view class="user_rank">{{user_rank}}</view>
       </view>
     </view>
+    
+    <button class="top-icon-button" wx:if="{{!have_user_info}}" bindgetuserinfo="get_user_info" type="primary" open-type="getUserInfo" lang="zh_CN">微信登录
+    </button>
   </view>
   <view class="middle">
     <view class="window">
