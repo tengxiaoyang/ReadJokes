@@ -7,11 +7,12 @@
   position: relative;
 }
 .top {
+  display: flex;
+  justify-content: center;
   height: 280rpx;
   background: #3399FF;
   position: relative;
   margin: 0;
-  padding: 40rpx 0 0 40rpx;
 }
 .top .user {
   width: 280rpx;
@@ -20,6 +21,7 @@
   left: 45rpx;
   display: flex;
   align-items: center;
+  top: 20rpx;
 }
 .top .user .user_left {
   display: inline-block;
@@ -58,12 +60,12 @@
 }
 .top button {
   text-align: center;
-  line-height: 74px;
-  font-size: 32rpx;
+  line-height: 63px;
+  font-size: 28rpx;
   position: relative;
-  top: -15rpx;
-  width: 148rpx!important;
-  height: 148rpx;
+  top: 19rpx;
+  width: 126rpx!important;
+  height: 126rpx;
   border-radius: 74rpx;
   border: 0;
   padding: 0;
