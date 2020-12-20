@@ -3,12 +3,14 @@
   <view class="top">
     <view class="top-main">
       <view class="top-icon">
-        <image class="top-icon-img" wx:if="{{have_user_info}}" src="{{user_icon}}" mode="aspectFill"></image>
+        <!-- <image class="top-icon-img" wx:if="{{have_user_info}}" src="{{user_icon}}" mode="aspectFill"></image> -->
+        <image class="top-icon-img" wx:if="{{have_user_info}}" src="{{userInfo.avatarUrl}}" mode="aspectFill"></image>
         <button class="top-icon-button" wx:if="{{!have_user_info}}" bindgetuserinfo="get_user_info" type="primary" open-type="getUserInfo" lang="zh_CN">微信登录
           <!-- <image class="top-icon-img" src="{{user_icon}}" mode="aspectFill"></image> -->
         </button>
       </view>
-      <view class="top-name" wx:if="{{have_user_info}}">{{username}}</view>
+      <!-- <view class="top-name" wx:if="{{have_user_info}}">{{username}}</view> -->
+      <view class="top-name" wx:if="{{have_user_info}}">{{userInfo.nickName}}</view>
       <view class="top-rank" wx:if="{{have_user_info}}">{{user_rank}}</view>
     </view>
   </view>

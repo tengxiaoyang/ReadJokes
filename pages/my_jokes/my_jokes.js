@@ -16,16 +16,37 @@ Page({
 
     jokes_data: [],
   },
+
   get_user_info: function(e) {
     if(e.detail.userInfo){
       app.globalData.userInfo = e.detail.userInfo
       this.setData({
         // user_info: e.detail.userInfo,
-        user_icon: e.detail.userInfo.avatarUrl,
-        username: e.detail.userInfo.nickName,
+        // user_icon: e.detail.userInfo.avatarUrl,
+        // username: e.detail.userInfo.nickName,
+        userInfo: e.detail.userInfo,
         have_user_info: true
       })
     }
+  },
+
+  login: function () {
+    var that = this;
+    wx.login({
+      success: function (res) {
+        var code = res.code;
+        console.log(code);
+        wx.getUserInfo({
+          success: function (res) {
+            app.globalData.userInfo = res.userInfo
+            that.setData({
+              userInfo: res.userInfo,
+              have_user_info: true
+            })
+          }
+        })
+      }
+    })
   },
 
   /**
@@ -57,15 +78,17 @@ Page({
 
     if (app.globalData.userInfo) {
       this.setData({
-        user_icon: app.globalData.userInfo.avatarUrl,
-        username: app.globalData.userInfo.nickName,
+        // user_icon: app.globalData.userInfo.avatarUrl,
+        // username: app.globalData.userInfo.nickName,
+        userInfo: app.globalData.userInfo,
         have_user_info: true
       })
     } else if (this.data.canIUse){
       app.userInfoReadyCallback = res => {
         this.setData({
-          user_icon: app.globalData.userInfo.avatarUrl,
-          username: app.globalData.userInfo.nickName,
+          // user_icon: app.globalData.userInfo.avatarUrl,
+          // username: app.globalData.userInfo.nickName,
+          userInfo: res.userInfo,
           have_user_info: true
         })
       }
@@ -74,8 +97,9 @@ Page({
         success: res => {
           app.globalData.userInfo = res.userInfo
           this.setData({
-            user_icon: app.globalData.userInfo.avatarUrl,
-            username: app.globalData.userInfo.nickName,
+            // user_icon: app.globalData.userInfo.avatarUrl,
+            // username: app.globalData.userInfo.nickName,
+            userInfo: res.userInfo,
             have_user_info: true
           })
         }
@@ -169,7 +193,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.login();
   },
 
   /**
@@ -183,16 +207,16 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    let pages = getCurrentPages(); 
-    let beforePage = pages[pages.length - 2];
-    wx.switchTab({
-        url: '/' + beforePage.route,
-        success: function() {
-            if (beforePage.route === "pages/mine/mine"){
-                beforePage.onLoad()
-            }
-        }
-    })
+    // let pages = getCurrentPages(); 
+    // let beforePage = pages[pages.length - 2];
+    // wx.switchTab({
+    //     url: '/' + beforePage.route,
+    //     success: function() {
+    //         if (beforePage.route === "pages/mine/mine"){
+    //             beforePage.onLoad()
+    //         }
+    //     }
+    // })
   },
 
   /**

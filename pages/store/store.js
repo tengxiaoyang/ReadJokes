@@ -67,7 +67,7 @@ Page({
         product_score: "25000000"
       },
       {
-        photo: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604582100355&di=6e1758c7f8eef379ba015dcb335d6235&imgtype=0&src=http%3A%2F%2Fstore.storeimages.cdn-apple.com%2F8756%2Fas-images.apple.com%2Fis%2Fmac-pro-hero-cto%3Fwid%3D554%26amp%3Bhei%3D444%26amp%3Bfmt%3Djpeg%26amp%3Bqlt%3D80%26amp%3B.v%3D1572646185753",
+        photo: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1607273249765&di=e600d4d0c7edcfa1493d6b80f6e9a662&imgtype=0&src=http%3A%2F%2Fi1.qihuiwang.com%2Fweb%2F2012-03-02%2F1116519b922c964bef.jpg",
         content: "Mac Pro",
         remaining_amount: "1",
         product_score: "480000000"

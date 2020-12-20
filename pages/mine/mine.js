@@ -15,11 +15,31 @@ Page({
       app.globalData.userInfo = e.detail.userInfo
       this.setData({
         // user_info: e.detail.userInfo,
-        user_icon: e.detail.userInfo.avatarUrl,
-        username: e.detail.userInfo.nickName,
+        // user_icon: e.detail.userInfo.avatarUrl,
+        // username: e.detail.userInfo.nickName,
+        userInfo: e.detail.userInfo,
         have_user_info: true
       })
     }
+  },
+
+  login: function () {
+    var that = this;
+    wx.login({
+      success: function (res) {
+        var code = res.code;
+        console.log(code);
+        wx.getUserInfo({
+          success: function (res) {
+            app.globalData.userInfo = res.userInfo
+            that.setData({
+              userInfo: res.userInfo,
+              have_user_info: true
+            })
+          }
+        })
+      }
+    })
   },
   
   jump_to_about: function(e) {
@@ -53,15 +73,17 @@ Page({
   onLoad: function (options) {
     if (app.globalData.userInfo) {
       this.setData({
-        user_icon: app.globalData.userInfo.avatarUrl,
-        username: app.globalData.userInfo.nickName,
+        // user_icon: app.globalData.userInfo.avatarUrl,
+        // username: app.globalData.userInfo.nickName,
+        userInfo: app.globalData.userInfo,
         have_user_info: true
       })
     } else if (this.data.canIUse){
       app.userInfoReadyCallback = res => {
         this.setData({
-          user_icon: app.globalData.userInfo.avatarUrl,
-          username: app.globalData.userInfo.nickName,
+          // user_icon: app.globalData.userInfo.avatarUrl,
+          // username: app.globalData.userInfo.nickName,
+          userInfo: res.userInfo,
           have_user_info: true
         })
       }
@@ -70,8 +92,9 @@ Page({
         success: res => {
           app.globalData.userInfo = res.userInfo
           this.setData({
-            user_icon: app.globalData.userInfo.avatarUrl,
-            username: app.globalData.userInfo.nickName,
+            // user_icon: app.globalData.userInfo.avatarUrl,
+            // username: app.globalData.userInfo.nickName,
+            userInfo: res.userInfo,
             have_user_info: true
           })
         }
@@ -90,7 +113,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.login();
   },
 
   /**

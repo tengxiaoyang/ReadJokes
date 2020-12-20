@@ -4,11 +4,13 @@
     <view class="user" wx:if="{{have_user_info}}">
       <view class="user_left">        
         <view class="user-icon">
-          <image class="user-icon-img" src="{{user_icon}}" mode="aspectFill"></image>
+          <!-- <image class="user-icon-img" src="{{user_icon}}" mode="aspectFill"></image> -->
+          <image class="user-icon-img" src="{{userInfo.avatarUrl}}" mode="aspectFill"></image>
         </view>
       </view>
       <view class="user_right">
-        <text class="username">{{username}}</text>
+        <!-- <text class="username">{{username}}</text> -->
+        <text class="username">{{userInfo.nickName}}</text>
         <view class="user_rank">{{user_rank}}</view>
       </view>
     </view>
