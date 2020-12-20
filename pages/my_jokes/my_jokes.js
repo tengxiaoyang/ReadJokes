@@ -31,10 +31,10 @@ Page({
   },
 
   login: function () {
-    var that = this;
+    let that = this;
     wx.login({
       success: function (res) {
-        var code = res.code;
+        let code = res.code;
         console.log(code);
         wx.getUserInfo({
           success: function (res) {
